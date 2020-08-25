@@ -10,7 +10,7 @@ This project is an event scheduling API, developed in JavaScript, to manage an e
 - jest
 - nodemon
 - dotenv
-- Winston
+- winston
 
 ## Setup
 
