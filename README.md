@@ -1,3 +1,5 @@
-# Event Scheduling 
+# Event Scheduling
 
-A event scheduling API 
+[![Build Status]](https://travis-ci.org/luiseduardogfranca/event-scheduling.svg?branch=master)
+
+A event scheduling API

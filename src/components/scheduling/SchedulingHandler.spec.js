@@ -1,4 +1,3 @@
-const SchedulingRoutes = require("../../common/routes/SchedulingRoutes");
 const SchedulingHandler = require("./SchedulingHandler");
 
 describe("Test scheduling methods", () => {
