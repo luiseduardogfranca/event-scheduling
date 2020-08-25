@@ -1,5 +1,5 @@
 const express = require("express");
-const SchedulingRoutes = require("./common/routes/SchedulingRoutes");
+const SchedulingRoutes = require("./routes/SchedulingRoutes");
 
 module.exports = () => {
   const app = express();

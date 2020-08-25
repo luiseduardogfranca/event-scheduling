@@ -1,9 +1,14 @@
 const { apiConfig } = require("./config/apiConfig");
-const app = require("./app");
+const logLoader = require("./common/logLoader");
+const app = require("./app")();
 
 (async () => {
   // call appLoader
-  app().listen(apiConfig.API_PORT, () => {
-    console.log("Servidor mode on");
+  app.listen(apiConfig.API_PORT, () => {
+    logLoader.info(
+      `API is running at https://localhost:${apiConfig.API_PORT} in ${app.get(
+        "env"
+      )} mode`
+    );
   });
 })();
