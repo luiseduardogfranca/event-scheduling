@@ -1,2 +1,3 @@
-# event-scheduling
+# Event Scheduling 
+
 A event scheduling API 
