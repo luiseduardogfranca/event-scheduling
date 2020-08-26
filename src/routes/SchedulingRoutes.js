@@ -2,5 +2,5 @@ const SchedulingController = require("../components/scheduling/SchedulingControl
 
 module.exports = (app) => {
   const controller = SchedulingController();
-  app.route("/api/v1/scheduling-events").get(controller.sendEvents);
+  app.route("/api/v1/sendEvents").post(controller.sendEvents);
 };

@@ -26,7 +26,10 @@
   },
   "homepage": "https://github.com/luiseduardogfranca/event-scheduling#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "express-fileupload": "^1.2.0",
     "typedi": "^0.8.0",
     "typeorm": "^0.2.25",
     "winston": "^3.3.3"
