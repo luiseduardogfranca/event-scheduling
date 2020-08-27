@@ -1,7 +1,10 @@
 // manage all event: create track, create event, and return
 
-function getNameAndDuration(title) {
+function createEventFromString(title) {
   return title;
 }
 
-module.exports = { getNameAndDuration };
+function validateTitleEvent(fileBuffer) {
+  return fileBuffer;
+}
+module.exports = { createEventFromString, validateTitleEvent };
