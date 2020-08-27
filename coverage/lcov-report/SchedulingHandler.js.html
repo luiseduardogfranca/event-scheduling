@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">92.31% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>12/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">84.62% </span>
+                <span class="strong">70.59% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/13</span>
+                <span class='fraction'>12/17</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">92.31% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>16/16</span>
+                <span class='fraction'>12/13</span>
             </div>
         
             
@@ -92,29 +92,33 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -128,32 +132,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// manage all event: create track, create event, and return
+const regex = {
+  title: /^([A-Za-zÀ-ÖØ-öø-ÿ:?!,.:;()-\s]+[A-Za-zÀ-ÖØ-öø-ÿ:?!,.:;()-])/i,
+  duration: /([1-9][0-9]+min)/,
+  durationNumber: /([1-9][0-9]+)/,
+  textDuration: /(lightning)/,
+};
 &nbsp;
 function createEventFromString(title) {
-  let regexTitle = /^([A-Za-zÀ-ÖØ-öø-ÿ\s]+[A-Za-zÀ-ÖØ-öø-ÿ])/i;
-  let regexDuration = /([1-9][0-9]+min)/;
-  let regexDurationNumber = /([1-9][0-9]+)/;
-&nbsp;
-  let nameMatch = title.match(regexTitle);
-  let durationMatch = title.match(regexDuration);
+  let nameMatch = title.match(regex.title);
+  let durationMatch = title.match(regex.duration);
 &nbsp;
   let eventName = nameMatch &amp;&amp; nameMatch.length &gt; 0 ? nameMatch[0] : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
   let eventDuration =
     durationMatch &amp;&amp; durationMatch.length &gt; 0
-      ? durationMatch[0].match(regexDurationNumber)[0]
+      ? durationMatch[0].match(regex.durationNumber)[0]
       : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+&nbsp;
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (eventDuration === null) {
+<span class="cstat-no" title="statement not covered" >    eventDuration = regex.textDuration.test(title) ? 5 : null;</span>
+  }
 &nbsp;
   return { title: eventName, duration: parseInt(eventDuration) };
 }
 &nbsp;
 function validateTitleEvent(eventTitle) {
-  let regexTitle = /^([A-Za-zÀ-ÖØ-öø-ÿ\s]+)/i;
-  let regexDuration = /([1-9][0-9]+min)/;
-  let regexTextDuration = /(lightning)/;
-&nbsp;
-  let testTitle = regexTitle.test(eventTitle);
-  let testDuration = regexDuration.test(eventTitle);
-  let testTextDuration = regexTextDuration.test(eventTitle);
+  let testTitle = regex.title.test(eventTitle);
+  let testDuration = regex.duration.test(eventTitle);
+  let testTextDuration = regex.textDuration.test(eventTitle);
 &nbsp;
   return (
     testTitle &amp;&amp;
@@ -169,7 +175,7 @@ module.exports = { createEventFromString, validateTitleEvent };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Aug 27 2020 00:48:06 GMT-0300 (Brasilia Standard Time)
+                at Thu Aug 27 2020 01:31:43 GMT-0300 (Brasilia Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>

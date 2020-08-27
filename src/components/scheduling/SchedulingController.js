@@ -19,11 +19,8 @@ module.exports = () => {
         let file = req.files.file;
 
         let arrayEvents = bufferConvert(file.data);
-        console.log(arrayEvents.length);
         arrayEvents = arrayEvents.filter((el) => validateTitleEvent(el));
-        console.log(arrayEvents.length);
         arrayEvents = arrayEvents.map((el) => createEventFromString(el));
-        console.log(arrayEvents);
 
         res.send(arrayEvents);
       }

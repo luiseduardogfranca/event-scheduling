@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1598500086063" clover="3.2.0">
-  <project timestamp="1598500086063" name="All files">
-    <metrics statements="16" coveredstatements="16" conditionals="13" coveredconditionals="11" methods="2" coveredmethods="2" elements="31" coveredelements="29" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
+<coverage generated="1598502703518" clover="3.2.0">
+  <project timestamp="1598502703519" name="All files">
+    <metrics statements="13" coveredstatements="12" conditionals="17" coveredconditionals="12" methods="2" coveredmethods="2" elements="32" coveredelements="26" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
     <file name="SchedulingHandler.js" path="/Users/luiseduardo/Documents/Projects/event-scheduling/src/components/scheduling/SchedulingHandler.js">
-      <metrics statements="16" coveredstatements="16" conditionals="13" coveredconditionals="11" methods="2" coveredmethods="2"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="11" count="1" type="cond" truecount="3" falsecount="1"/>
+      <metrics statements="13" coveredstatements="12" conditionals="17" coveredconditionals="12" methods="2" coveredmethods="2"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
       <line num="13" count="1" type="cond" truecount="3" falsecount="1"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="21" count="5" type="stmt"/>
-      <line num="22" count="5" type="stmt"/>
-      <line num="23" count="5" type="stmt"/>
-      <line num="25" count="5" type="stmt"/>
-      <line num="26" count="5" type="stmt"/>
+      <line num="15" count="1" type="cond" truecount="3" falsecount="1"/>
+      <line num="19" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="23" count="1" type="stmt"/>
       <line num="27" count="5" type="stmt"/>
+      <line num="28" count="5" type="stmt"/>
       <line num="29" count="5" type="stmt"/>
-      <line num="35" count="1" type="stmt"/>
+      <line num="31" count="5" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
