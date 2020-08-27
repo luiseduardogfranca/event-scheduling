@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1598492912936" clover="3.2.0">
-  <project timestamp="1598492912937" name="All files">
-    <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="5" coveredelements="5" complexity="0" loc="3" ncloc="3" packages="1" files="1" classes="1"/>
+<coverage generated="1598499405499" clover="3.2.0">
+  <project timestamp="1598499405499" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="13" coveredconditionals="11" methods="2" coveredmethods="2" elements="31" coveredelements="29" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
     <file name="SchedulingHandler.js" path="/Users/luiseduardo/Documents/Projects/event-scheduling/src/components/scheduling/SchedulingHandler.js">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="16" coveredstatements="16" conditionals="13" coveredconditionals="11" methods="2" coveredmethods="2"/>
       <line num="4" count="1" type="stmt"/>
-      <line num="8" count="5" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="11" count="1" type="cond" truecount="3" falsecount="1"/>
+      <line num="13" count="1" type="cond" truecount="3" falsecount="1"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="21" count="5" type="stmt"/>
+      <line num="22" count="5" type="stmt"/>
+      <line num="23" count="5" type="stmt"/>
+      <line num="25" count="5" type="stmt"/>
+      <line num="26" count="5" type="stmt"/>
+      <line num="27" count="5" type="stmt"/>
+      <line num="29" count="5" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

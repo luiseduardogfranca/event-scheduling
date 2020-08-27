@@ -1,7 +1,7 @@
 const SchedulingHandler = require("./SchedulingHandler");
 
 describe("Test handler methods to scheduling events", () => {
-  it("getNameAndDuration should spliting in title, and return the name and duration", (done) => {
+  it("createEventFromString should spliting in title, and return the name and duration", (done) => {
     // console.log(SchedulingHandler());
     let res = SchedulingHandler.createEventFromString("API with JS 30min");
     expect(res).toMatchObject({ title: "API with JS", duration: 30 });
