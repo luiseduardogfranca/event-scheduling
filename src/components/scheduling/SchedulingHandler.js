@@ -1,7 +1,7 @@
 // manage all event: create track, create event, and return
 
 function createEventFromString(title) {
-  let regexTitle = /^([a-z\s]+[a-z])/i;
+  let regexTitle = /^([A-Za-zÀ-ÖØ-öø-ÿ\s]+[A-Za-zÀ-ÖØ-öø-ÿ])/i;
   let regexDuration = /([1-9][0-9]+min)/;
   let regexDurationNumber = /([1-9][0-9]+)/;
 
@@ -18,7 +18,7 @@ function createEventFromString(title) {
 }
 
 function validateTitleEvent(eventTitle) {
-  let regexTitle = /^([a-z\s]+)/i;
+  let regexTitle = /^([A-Za-zÀ-ÖØ-öø-ÿ\s]+)/i;
   let regexDuration = /([1-9][0-9]+min)/;
   let regexTextDuration = /(lightning)/;
 

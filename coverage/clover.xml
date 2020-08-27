@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1598499405499" clover="3.2.0">
-  <project timestamp="1598499405499" name="All files">
+<coverage generated="1598500086063" clover="3.2.0">
+  <project timestamp="1598500086063" name="All files">
     <metrics statements="16" coveredstatements="16" conditionals="13" coveredconditionals="11" methods="2" coveredmethods="2" elements="31" coveredelements="29" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
     <file name="SchedulingHandler.js" path="/Users/luiseduardo/Documents/Projects/event-scheduling/src/components/scheduling/SchedulingHandler.js">
       <metrics statements="16" coveredstatements="16" conditionals="13" coveredconditionals="11" methods="2" coveredmethods="2"/>
