@@ -1,6 +1,6 @@
 # Event Scheduling 🗓
 
-![Build Status](https://travis-ci.org/luiseduardogfranca/event-scheduling.svg?branch=feature/express-master)
+![Build Status](https://travis-ci.org/luiseduardogfranca/event-scheduling.svg?branch=master)
 
 This project is an event scheduling API, developed in JavaScript, to manage an event list and return all events divided by tracks.
 
