@@ -1,9 +1,33 @@
+const bufferConvert = require("../../common/utils/bufferConvert");
+const {
+  validateTitleEvent,
+  createEventFromString,
+} = require("./SchedulingHandler");
+
 // create endpoint to received a file and return a array with all scheduling
 module.exports = () => {
   const controller = {};
 
-  controller.sendEvents = (req, res) =>
-    res.status(200).json({ test: "Criado com sucesso!" });
+  controller.sendEvents = (req, res) => {
+    try {
+      if (!req.files) {
+        res.send({
+          status: false,
+          message: "Not file uploaded!",
+        });
+      } else {
+        let file = req.files.file;
+
+        let arrayEvents = bufferConvert(file.data);
+        arrayEvents = arrayEvents.filter((el) => validateTitleEvent(el));
+        arrayEvents = arrayEvents.map((el) => createEventFromString(el));
+
+        res.send(arrayEvents);
+      }
+    } catch (err) {
+      res.status(500).send(err);
+    }
+  };
 
   return controller;
 };

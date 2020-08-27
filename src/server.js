@@ -1,5 +1,5 @@
 const { apiConfig } = require("./config/apiConfig");
-const logLoader = require("./common/logLoader");
+const logLoader = require("./common/loader/logLoader");
 const app = require("./app")();
 
 (async () => {

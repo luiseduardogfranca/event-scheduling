@@ -24,3 +24,9 @@ $  npm install
 # Run the API in localhost:3000 with the following command:
 $  npm start
 ```
+
+### Using API with Postman
+
+```
+
+```
