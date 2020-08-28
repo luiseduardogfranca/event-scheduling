@@ -9,6 +9,7 @@ const { isEqual, isBefore, isAfter } = require("date-fns");
 
 const R = require("ramda");
 const normalizeTime = require("../../common/utils/normalizeTime");
+const getNetworkingeEvent = require("../../common/utils/getNetworkingeEvent");
 
 const regex = {
   title: /^([A-Za-zÀ-ÖØ-öø-ÿ:?!,.:;()-\s]+[A-Za-zÀ-ÖØ-öø-ÿ:?!,.:;()-])/i,
@@ -42,8 +43,8 @@ function generateTrack(arrayEvents) {
           isAfter(newEvent.endTime, breakPoint) &&
           isEqual(breakPoint, getHour(17))
         ) {
-          console.log(track.length);
-
+          // add networking event at 17h
+          track.push(getNetworkingeEvent(getHour(17)));
           tracks.push(normalizeTime(track));
           track = [];
           startTime = getHour(9);
@@ -63,8 +64,7 @@ function generateTrack(arrayEvents) {
         index == arrayEvents.length - 1 &&
         !isAfter(newEvent.endTime, getHour(17))
       ) {
-        console.log(track.length);
-
+        track.push(getNetworkingeEvent(getHour(17)));
         tracks.push(normalizeTime(track));
       }
     }
