@@ -1,10 +1,47 @@
-// manage all event: create track, create event, and return
+const {
+  format,
+  isBefore,
+  setHours,
+  addMinutes,
+  startOfDay,
+} = require("date-fns/fp");
+const R = require("ramda");
+
 const regex = {
   title: /^([A-Za-zÀ-ÖØ-öø-ÿ:?!,.:;()-\s]+[A-Za-zÀ-ÖØ-öø-ÿ:?!,.:;()-])/i,
   duration: /([1-9][0-9]+min)/,
   durationNumber: /([1-9][0-9]+)/,
   textDuration: /(lightning)/,
 };
+
+function generateTrack(arrayEvents) {
+  let tracks = [];
+
+  let startTime = R.pipe(startOfDay)(new Date());
+
+  for (let index = 0; index < arrayEvents.length; ++index) {
+    if (arrayEvents[index] != undefined) {
+      newEvent = addTimeToEvent(
+        startTime,
+        arrayEvents[index],
+        (time, duration) => R.pipe(addMinutes(duration))(startTime)
+      );
+      startTime = newEvent.endTime;
+      tracks.push(newEvent);
+    }
+  }
+
+  return tracks;
+}
+
+function addTimeToEvent(startTime, eventObj, getEndTime) {
+  console.log("ajijsia", eventObj);
+  return {
+    ...eventObj,
+    startTime: startTime,
+    endTime: getEndTime(startTime, eventObj.duration),
+  };
+}
 
 function createEventFromString(title) {
   let nameMatch = title.match(regex.title);
@@ -34,4 +71,9 @@ function validateTitleEvent(eventTitle) {
   );
 }
 
-module.exports = { createEventFromString, validateTitleEvent };
+module.exports = {
+  createEventFromString,
+  validateTitleEvent,
+  addTimeToEvent,
+  generateTrack,
+};
