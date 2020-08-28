@@ -13,6 +13,10 @@ This project is an event scheduling API, developed in JavaScript, to manage an e
 - dotenv
 - winston
 
+### CI/CD
+
+This project use Travis to Continuos Integration and Heroku to deploy when tests passed after push to master branch
+
 ## Setup
 
 ```sh
