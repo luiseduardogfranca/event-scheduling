@@ -4,6 +4,7 @@ const {
   setHours,
   addMinutes,
   startOfDay,
+  addHours,
 } = require("date-fns/fp");
 const R = require("ramda");
 
@@ -17,7 +18,7 @@ const regex = {
 function generateTrack(arrayEvents) {
   let tracks = [];
 
-  let startTime = R.pipe(startOfDay)(new Date());
+  let startTime = R.pipe(startOfDay, addHours(9))(new Date());
 
   for (let index = 0; index < arrayEvents.length; ++index) {
     if (arrayEvents[index] != undefined) {
@@ -35,7 +36,6 @@ function generateTrack(arrayEvents) {
 }
 
 function addTimeToEvent(startTime, eventObj, getEndTime) {
-  console.log("ajijsia", eventObj);
   return {
     ...eventObj,
     startTime: startTime,
