@@ -25,7 +25,7 @@ module.exports = () => {
         arrayEvents = arrayEvents.map((el) => createEventFromString(el));
 
         let tracks = generateTrack(arrayEvents);
-        res.send(normalizeTime(tracks));
+        res.send(tracks);
       }
     } catch (err) {
       console.error(err.message);
