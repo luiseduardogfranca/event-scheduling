@@ -15,9 +15,35 @@ This project is an event scheduling API, developed in JavaScript, to manage an e
 
 ### CI/CD
 
-This project use Travis to Continuos Integration and Heroku to deploy when tests passed after push to master branch
+This project use Travis to Continuos Integration and Heroku to deploy. After tests passed by Travis, the master branch is pushed and deployed in Heroku plataform.
 
-## Setup
+Note: The free dynos enter the sleep mode after time, so the UpTimeRobot is used to ping in dyno every 15min.
+
+## Get started
+
+1. API access
+   1. Heroku
+   2. Locally
+2. Send file with Postman
+3. Get response with all events
+
+### 1. API access
+
+#### 1.1 Running by Heroku
+
+API link:
+
+```
+https://scheduling-events.herokuapp.com/api/v1
+```
+
+To use sendEvents endpoint:
+
+```
+https://scheduling-events.herokuapp.com/api/v1/sendEvents
+```
+
+#### 1.2 Running locally
 
 ```sh
 # First clone this repository in your machine:
@@ -28,15 +54,12 @@ $  npm install
 
 # Run the API in localhost:3000 with the following command:
 $  npm start
+
+# API access in:
+localhost:3000/api/v1/sendEvents
 ```
 
-### Using API with Postman
-
-```
-
-```
-
-#### Put these events in your example.txt file
+#### Create a file with all events of type .txt
 
 ```
 Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min
@@ -59,3 +82,10 @@ Manutenção de aplicações legadas em Ruby on Rails 60min
 Um mundo sem StackOverflow 30min
 Otimizando CSS em aplicações Rails 30min
 ```
+
+### Using API with Postman
+
+1. Send a POST request with [link](#1-.-api-access) of API above
+2. Set a key name like "file" and file type
+3. Choose file
+4. Send request

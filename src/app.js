@@ -10,6 +10,8 @@ module.exports = () => {
   app.use(fileUpload({ createParentPath: true }));
 
   SchedulingRoutes(app);
+  app.route("/api/v1/").get((req, res) => res.send("API is worked!"));
+  app.route("/").get((req, res) => res.send("API is worked!"));
 
   return app;
 };
