@@ -56,4 +56,27 @@ describe("Test handler methods to scheduling events", () => {
     });
     done();
   });
+
+  it("generateTrack should return a array all tracks", (done) => {
+    let events = [
+      { title: "event", duration: 60 },
+      { title: "event", duration: 20 },
+      { title: "event", duration: 20 },
+      { title: "event", duration: 20 },
+      { title: "event", duration: 20 },
+      { title: "event", duration: 60 },
+      { title: "event", duration: 40 },
+      { title: "event", duration: 40 },
+      { title: "event", duration: 50 },
+      { title: "event", duration: 15 },
+    ];
+
+    let res = SchedulingHandler.generateTrack(events);
+
+    expect(res).not.toBeUndefined();
+    expect(res.length).not.toBeUndefined();
+    expect(res.length > 0).toBeTruthy();
+
+    done();
+  });
 });
