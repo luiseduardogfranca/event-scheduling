@@ -29,7 +29,7 @@ function generateTrack(arrayEvents) {
   for (let index = 0; index < arrayEvents.length; ++index) {
     let getEvent = () =>
       addTimeToEvent(startTime, arrayEvents[index], (time, duration) =>
-        R.pipe(addMinutes(duration))(startTime)
+        R.pipe(addMinutes(duration))(time)
       );
 
     if (arrayEvents[index] != undefined) {
