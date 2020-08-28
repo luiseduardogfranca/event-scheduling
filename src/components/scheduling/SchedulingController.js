@@ -2,7 +2,9 @@ const bufferConvert = require("../../common/utils/bufferConvert");
 const {
   validateTitleEvent,
   createEventFromString,
+  generateTrack,
 } = require("./SchedulingHandler");
+const normalizeTime = require("../../common/utils/normalizeTime");
 
 // create endpoint to received a file and return a array with all scheduling
 module.exports = () => {
@@ -17,14 +19,16 @@ module.exports = () => {
         });
       } else {
         let file = req.files.file;
-
         let arrayEvents = bufferConvert(file.data);
+
         arrayEvents = arrayEvents.filter((el) => validateTitleEvent(el));
         arrayEvents = arrayEvents.map((el) => createEventFromString(el));
 
-        res.send(arrayEvents);
+        let tracks = generateTrack(arrayEvents);
+        res.send(tracks);
       }
     } catch (err) {
+      console.error(err.message);
       res.status(500).send(err);
     }
   };
