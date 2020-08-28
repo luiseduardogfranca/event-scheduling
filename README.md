@@ -37,7 +37,7 @@ API link:
 https://scheduling-events.herokuapp.com/api/v1
 ```
 
-To use sendEvents endpoint:
+To use sendEvents endpoint (POST method):
 
 ```
 https://scheduling-events.herokuapp.com/api/v1/sendEvents
@@ -55,11 +55,33 @@ $  npm install
 # Run the API in localhost:3000 with the following command:
 $  npm start
 
-# API access in:
+# API access in Postman:
 localhost:3000/api/v1/sendEvents
 ```
 
-#### Create a file with all events of type .txt
+### Using API with Curl
+
+1. Replace \$ENDPOINT_URL to sendEvents [endpoint URL](#1-api-access)
+2. Replace \$PATH_FILE to directory of your file
+
+```sh
+$ curl $ENDPOINT_URL -F file=@$PATH_FILE
+```
+
+### Using API with Postman
+
+1. Send a POST request with [link](#1-api-access) of API above
+2. Set a key name like "file" and file type
+3. Choose file ([example](#file-example))
+4. Send request
+
+Example:
+
+![Postman example](./src/assets/image/postman.png)
+
+## File example
+
+Create a file with .txt extension.
 
 ```
 Diminuindo tempo de execução de testes em aplicações Rails enterprise 60min
@@ -82,10 +104,3 @@ Manutenção de aplicações legadas em Ruby on Rails 60min
 Um mundo sem StackOverflow 30min
 Otimizando CSS em aplicações Rails 30min
 ```
-
-### Using API with Postman
-
-1. Send a POST request with [link](#1-.-api-access) of API above
-2. Set a key name like "file" and file type
-3. Choose file
-4. Send request
