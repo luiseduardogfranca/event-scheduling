@@ -4,6 +4,12 @@
 
 This project is an event scheduling API, developed in JavaScript, to manage an event list and return all events divided by tracks.
 
+Event Scheduling application: [https://app-scheduling-event.herokuapp.com/](https://app-scheduling-event.herokuapp.com/)
+
+## Front-end repository
+
+This API have a front-end, the [Scheduling Events application](https://github.com/luiseduardogfranca/app-event-scheduling), to manage all events and get a list of tracks.
+
 ## Depedencies
 
 - express
